@@ -28,7 +28,6 @@ clean:
 	find . -type f -name "*.log" | xargs rm -rf
 	find . -type f -name "*.lot" | xargs rm -rf
 	find . -type f -name "*.out" | xargs rm -rf
-	find . -type f -name "*.pdf" | xargs rm -rf
 	find . -type f -name "*.spl" | xargs rm -rf
 	find . -type f -name "*.toc" | xargs rm -rf
 
