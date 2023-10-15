@@ -1,0 +1,67 @@
+\section{Describing data sets}\label{sec:describing-data-sets}
+
+~\cite{ross_introduction_2009}
+
+\begin{table}[H]
+  \centering
+  \pgfplotstabletypeset[
+    columns={
+      Starting yearly salary,
+      Frequency
+    },
+    col sep=comma,
+    every head row/.style={before row=\toprule,after row=\midrule},
+    every last row/.style={after row=\bottomrule},
+  ]{src/starting_yearly_salaries.csv}
+  \caption{Starting yearly salaries}
+  \label{tbl:starting-yearly-salaries}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        xlabel           = {Starting yearly salaries},
+        ylabel           = {Frequencies},
+        grid             = both,
+        minor grid style = {dashed,gray!25},
+        major grid style = {dashed,gray!25},
+        width            = 0.75\linewidth,
+      ]
+      \addplot
+      table[
+        x       = Starting yearly salary,
+        y       = Frequency,
+        col sep = comma,
+      ]{src/starting_yearly_salaries.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Starting yearly salaries}
+  \label{fig:plot-frequencies-yearly-salaries}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        grid             = both,
+        major grid style = {dashed,gray!25},
+        minor grid style = {dashed,gray!25},
+        width            = 0.75\linewidth,
+        xlabel           = {Starting yearly salaries},
+        ylabel           = {Frequencies},
+        ybar,
+      ]
+      \addplot
+      table[
+        x       = Starting yearly salary,
+        y       = Frequency,
+        col sep = comma,
+      ]{src/starting_yearly_salaries.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Starting yearly salaries}
+  \label{fig:bar-frequencies-yearly-salaries}
+\end{figure}
+
+
