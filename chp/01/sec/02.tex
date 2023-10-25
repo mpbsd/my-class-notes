@@ -1,0 +1,111 @@
+\section{Chebyshev's Inequality}\label{sec:chebyshevs-inequality}
+
+\begin{theorem}[Chebyshev's Inequality]\label{thm:chebyshevs-inequality}
+  Let \(\samplemean{x}\) and \(\samplestandarddeviation{x}\) be the sample mean
+  and the sample standard deviation of the data set consisting of the data
+  \(x_{1},\ldots,x_{n}\), where \(\samplestandarddeviation{x}>0\). Also, for any
+  \(k\geqslant{1}\), take
+  \[
+    S_{k}
+    =
+    \left\{
+      i\in{\left\{1,\ldots,n\right\}}
+      :
+      1\leqslant{i}\leqslant{n},
+      \abs{x_{i}-\samplemean{x}}<k\samplestandarddeviation{x}
+      \right\},
+  \]
+  and let \(N\left(S_{k}\right)\) be the number of elements in \(S_{k}\).
+  Then, we have that
+  \[
+    \frac{N\left(S_{k}\right)}{n}
+    \geqslant
+    1-\frac{n-1}{nk^{2}}
+    \geqslant
+    1-\frac{1}{k^{2}}.
+  \]
+\end{theorem}
+
+\begin{proof}
+  Notice that we have
+  \begin{align*}
+    (n-1)\samplestandarddeviation{x}^{2}
+    &=
+    \sum_{i=1}^{n}\left(x_{i}-\samplemean{x}\right)^{2}
+    \\
+    &=
+    \sum_{i\in{S_{k}}}\left(x_{i}-\samplemean{x}\right)^{2}
+    +
+    \sum_{i\notin{S_{k}}}\left(x_{i}-\samplemean{x}\right)^{2}
+    \\
+    &\geqslant
+    \sum_{i\notin{S_{k}}}\left(x_{i}-\samplemean{x}\right)^{2}
+    \\
+    &\geqslant
+    \sum_{i\notin{S_{k}}}k^{2}\samplestandarddeviation{x}^{2}
+    \\
+    &=N\left(S_{k}\right)k^{2}\samplestandarddeviation{x}^{2}
+  \end{align*}
+  from what it follows that
+  \[
+    \frac{N\left(S_{k}\right)}{n}
+    \geqslant
+    1-\frac{n-1}{nk^{2}}
+    >
+    1-\frac{1}{k^{2}}.
+  \]
+  The proof is now complete.
+\end{proof}
+
+\begin{example}
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{lr}
+      Ford F Series         & 44813 \\
+      Toyota Camry          & 40016 \\
+      Chevrolet Silverado   & 37231 \\
+      Honda Accoord Hybrid  & 35075 \\
+      Toyota Corolla Matrix & 32535 \\
+      Honda Civic Hybrid    & 31710 \\
+      Chevrolet Impala      & 26728 \\
+      Dodge Ram             & 24206 \\
+      Ford Focus            & 23850 \\
+      Nissan Altima Hybrid  & 22630
+    \end{tabular}
+    \caption{Top Selling Vehicles in the United States in 2008}
+    \label{tbl:top-selling-vehicles-in-the-eua-in-2008}
+  \end{table}
+\end{example}
+
+\begin{theorem}[One-Sided Chebyshev's Inequality]\label{thm:one-sided-chebyshev-inequality}
+  Let \(\samplemean{x}\) and \(\samplestandarddeviation{x}\) be the sample mean
+  and the sample standard deviation of the data set \(x_{1},\ldots,x_{n}\).
+  Also, for any \(k>0\), let
+  \[
+    N(k)
+    =
+    \left\{
+      i\in{\left\{1,\ldots,n\right\}}
+      :
+      x_{i}-\samplemean{x}
+      \geqslant{k\samplestandarddeviation{x}}
+    \right\}.
+  \]
+  Then, we have that
+  \[
+    \frac{N(k)}{n}\leqslant{\frac{1}{1+k^{2}}}.
+  \]
+\end{theorem}
+
+\begin{proof}
+  Let \(y_{i}=x_{i}-\samplemean{x}\), \(i=1,\ldots,n\). For any \(b>0\), we have
+  that
+  \begin{align*}
+    \sum_{i=1}^{n}(y_{i}+b)^{2}
+    &\geqslant
+    \sum_{i:y_{i}\geqslant{k\samplestandarddeviation{x}}}(y_{i}+b)^{2}
+    \\
+  \end{align*}
+
+\end{proof}
+
