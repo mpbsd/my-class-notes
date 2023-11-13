@@ -1,9 +1,0 @@
-\chapter{Descriptive statistics}\label{chp:descriptive-statistics}
-
-\input{chp/01/sec/01} % describing data sets
-\input{chp/01/sec/02} % chebyshev's inequality
-<<<<<<< HEAD
-\input{chp/01/sec/03} % correcao de um exercicio
-=======
-\input{chp/01/sec/03} % chebyshev's inequality
->>>>>>> 81100d46c1ba437e83d3becd5371d0ce21ebe015
