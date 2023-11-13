@@ -11,9 +11,8 @@
     \left\{
       i\in{\left\{1,\ldots,n\right\}}
       :
-      1\leqslant{i}\leqslant{n},
       \abs{x_{i}-\samplemean{x}}<k\samplestandarddeviation{x}
-      \right\},
+    \right\},
   \]
   and let \(N\left(S_{k}\right)\) be the number of elements in \(S_{k}\).
   Then, we have that
@@ -101,11 +100,43 @@
   Let \(y_{i}=x_{i}-\samplemean{x}\), \(i=1,\ldots,n\). For any \(b>0\), we have
   that
   \begin{align*}
+    n(\samplevariance{x}+b^{2})
+    &>
+    (n-1)\samplevariance{x}+b^{2}
+    \\
+    &=
+    \sum_{i=1}^{n}y_{i}^{2}+nb^{2}
+    \\
+    &=
+    \sum_{i=1}^{n}y_{i}^{2}+2b\sum_{i=1}^{n}y_{i}+b^{2}\quad\left(\textup{because}\,\,\sum_{i=1}^{n}y_{i}=0\right)
+    \\
+    &=
     \sum_{i=1}^{n}(y_{i}+b)^{2}
+    \\
     &\geqslant
     \sum_{i:y_{i}\geqslant{k\samplestandarddeviation{x}}}(y_{i}+b)^{2}
     \\
+    &\geqslant
+    \sum_{i:y_{i}\geqslant{k\samplestandarddeviation{x}}}(k\samplestandarddeviation{x}+b)^{2}
+    \\
+    &=
+    N(k)(k\samplestandarddeviation{x}+b)^{2},
   \end{align*}
-
+  from what it follows that
+  \[
+    \frac{N(k)}{n}
+    \leqslant
+    \frac{\samplevariance{x}+b^{2}}{(k\samplestandarddeviation{x}+b)^{2}}.
+  \]
+  Since this is true for every \(b>0\), by minimizing the function
+  \[
+    \ointerval{0}{\infty}\to\reals,
+    \quad
+    b\mapsto{\frac{\samplevariance{x}+b^{2}}{(k\samplestandarddeviation{x}+b)^{2}}},
+  \]
+  we find that, for \(b=s/k\), that we do have
+  \[
+    \frac{N(k)}{n}\leqslant{\frac{1}{1+k^{2}}},
+  \]
+  which proves the assertion.
 \end{proof}
-

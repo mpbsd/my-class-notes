@@ -1,3 +1,126 @@
+<<<<<<< HEAD
+\section{Correção de um exercício da lista}\label{sec:correcao-de-um-exercício-da-lista}
+
+\begin{exercise}
+  The sample mean and sample variance of five data values are, respectively,
+  \(\samplemean{x}=104\) and \(\samplevariance{x}=4\). If three of the data
+  values are \(102,100,105\) what are the other two data values?
+\end{exercise}
+
+Suponha que
+\(x_{1}^{0},x_{2}^{0},x_{3}^{0},\samplemean{x},\samplevariance{x}\in\reals\)
+sejam constantes, onde \(\samplevariance{x}\geqslant{0}\), e que
+\(x_{4},x_{5}\in\reals\) sejam números reais a serem encontrados de forma que
+\[
+  \left\{
+    \begin{array}{rcl}
+      \samplemean{x}
+      &=&
+      \dfrac{
+        x_{1}^{0}+x_{2}^{0}+x_{3}^{0}+x_{4}+x_{5}
+      }{5}
+      \\
+      &&
+      \\
+      \samplevariance{x}
+      &=&
+      \dfrac{
+        (x_{1}^{0}-\samplemean{x})^{2}
+        +
+        (x_{2}^{0}-\samplemean{x})^{2}
+        +
+        (x_{3}^{0}-\samplemean{x})^{2}
+        +
+        (x_{4}-\samplemean{x})^{2}
+        +
+        (x_{5}-\samplemean{x})^{2}
+      }{4}
+    \end{array}
+  \right.
+\]
+Observe, neste caso, que:
+\begin{align}
+  x_{4}+x_{5}
+  &=
+  5\samplemean{x}
+  -
+  \sum_{i=1}^{3}x_{i}^{0}
+  \\
+  (x_{4}-\samplemean{x})^{2}
+  +
+  (x_{5}-\samplemean{x})^{2}
+  &=
+  4\samplevariance{x}
+  -
+  \sum_{i=1}^{3}(x_{i}^{0}-\samplemean{x})^{2}
+\end{align}
+de onde segue que:
+\[
+  x_{4}^{2}+x_{5}^{2}
+  -
+  2\samplemean{x}(x_{4}+x_{5})
+  +
+  2\samplemean{x}^{2}
+  =
+  4\samplevariance{x}
+  -
+  \sum_{i=1}^{3}(x_{i}^{0})^{2}
+  +
+  2\samplemean{x}\sum_{i=1}^{3}x_{i}^{0}
+  -
+  3\samplemean{x}^{2}
+  ,
+\]
+e, assim, que:
+\[
+  x_{4}^{2}+x_{5}^{2}
+  -
+  2
+  \samplemean{x}
+  \left(
+    5\samplemean{x}
+    -
+    \sum_{i=1}^{3}x_{i}^{0}
+  \right)
+  +
+  2\samplemean{x}^{2}
+  =
+  4\samplevariance{x}
+  -
+  \sum_{i=1}^{3}(x_{i}^{0})^{2}
+  +
+  2\samplemean{x}\sum_{i=1}^{3}x_{i}^{0}
+  -
+  3\samplemean{x}^{2}.
+\]
+Portanto, tem-se que:
+\[
+  5\samplemean{x}^{2}+4\samplevariance{x}-\sum_{i=1}^{3}(x_{i}^{0})^{2}
+  =
+  x_{4}^{2}+x_{5}^{2}
+  \geqslant{0}.
+\]
+Isto mostra que os valores
+\(x_{1}^{0},x_{2}^{0},x_{3}^{0},\samplemean{x},\samplestandarddeviation{x}\)
+precisam satisfazer à relação:
+\[
+  \frac{\samplemean{x}^{2}}{a^{2}}
+  +
+  \frac{\samplevariance{x}}{b^{2}}
+  \geqslant{1}
+  ,
+\]
+onde
+\[
+  a=\frac{\sqrt{\sum_{i=1}^{3}(x_{i}^{0})^{2}}}{\sqrt{5}}
+  \quad
+  \text{e}
+  \quad
+  b=\frac{\sqrt{\sum_{i=1}^{3}(x_{i}^{0})^{2}}}{2}
+  .
+\]
+Sabendo disso, você consegue agora escolher valores adequados?
+=======
 \section{Área do setor circular}\label{sec:area-do-setor-circular}
 
 Para calcular a área do setor circular de uma circunferência, de raio \(R>0\),
@@ -91,9 +214,11 @@ soma de integrais:
   +
   \frac{R^{2}}{2}
   \left(
-    5\samplemean{x}
+    \frac{\pi}{2}
     -
-    \sum_{i=1}^{3}x_{i}^{0}
+    \arcsin{\left(\frac{R\cos{(\theta)}}{R}\right)}
+    -
+    \frac{R\cos{(\theta)}\sqrt{R^{2}-R^{2}\cos^{2}{(\theta)}}}{R^{2}}
   \right)
   \\
   &=
@@ -141,3 +266,4 @@ onde utilizamos os seguintes fatos:
   Refaça os cálculos utilizando, desta vez, o Teorema de Green.
 \end{remark}
 
+>>>>>>> 81100d46c1ba437e83d3becd5371d0ce21ebe015
