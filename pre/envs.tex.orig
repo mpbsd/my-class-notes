@@ -1,4 +1,7 @@
 \newtheorem{example}{Example}
+<<<<<<< HEAD
 \newtheorem{exercise}{Exercise}
+=======
 \newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
+>>>>>>> 81100d46c1ba437e83d3becd5371d0ce21ebe015
